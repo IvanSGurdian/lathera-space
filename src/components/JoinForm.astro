@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets'
+
+import img1 from '../assets/images/Contact.png'
+import img2 from '../assets/images/Footer.png'
+---
+
+<section>
+	<div class="bg-[#d2b7a2] text-white h-[270px]">
+		<div class="container max-w-6xl mx-auto flex">
+			<div class="md:w-2/6 py-16 text-center md:text-left">
+				<h2 class="text-4xl mb-10">Join the Launch List</h2>
+
+				<p>We're opening doors in soon!</p>
+
+				<p>
+					Drop your info below and be first in line for tours, dioscounts, and
+					exclusive events
+				</p>
+			</div>
+			<div class="md:w-4/6 relative">
+				<Image
+					src={img1}
+					alt="Contact"
+					class="absolute right-0 -top-8"
+					width={600}
+				/>
+			</div>
+		</div>
+	</div>
+	<div class="bg-[#8d9b8c]">
+		<div class="container max-w-6xl mx-auto py-12">
+			<form
+				action=""
+				class="flex flex-col gap-4 text-white md:max-w-2/6 px-4 md:px-0"
+			>
+				<input type="text" placeholder="Name" class="p-2 border border-white" />
+				<input
+					type="email"
+					placeholder="Email"
+					class="p-2 border border-white"
+				/>
+				<input
+					type="text"
+					placeholder="Professional License / Interest"
+					class="p-2 border border-white"
+				/>
+				<input
+					type="date"
+					placeholder="Preferred Move-In Date"
+					class="p-2 border border-white"
+				/>
+
+				<input
+					type="submit"
+					value="Notify Me"
+					class="bg-white text-[#8d9b8c] py-2 md:w-1/2 mt-4"
+				/>
+			</form>
+			<small class="text-white"
+				>We respect your inbox and your privacy. No spam-ever</small
+			>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,60 @@
+---
+import Card from './UI/Card.astro'
+
+import icon1 from '../assets/icons/Lathera Icons-05.svg'
+import card1 from '../assets/images/licensed.png'
+
+import icon2 from '../assets/icons/Lathera Icons-06.svg'
+import card2 from '../assets/images/client.png'
+
+const cards = [
+	{
+		title: 'Licensed Professionals',
+		content: `
+            <ul class="flex flex-wrap list-disc gap-x-6">
+                <li>Psychologists</li>
+                <li>LMFTs</li>
+                <li>LCSWs</li>
+                <li>Coaches</li>
+                <li>Nutritionists</li>
+                <li>Body-work Therapists</li>
+            </ul>
+        `,
+		icon: icon1,
+		bg: card1.src,
+		color: 'text-[#ccbaaa]',
+	},
+	{
+		title: 'Clients & Patients',
+		content: `
+            <p>
+                Searching for the right therapist? Our public directory (launching soon) will let you filter by specialty, language, insurance, and more.
+            </p>
+        `,
+		icon: icon2,
+		bg: card2.src,
+		color: 'text-[#8b9886]',
+	},
+]
+---
+
+<section class="container mx-auto max-w-6xl">
+	<h2 class="text-4xl text-center py-16">
+		Who <span class="text-[#ccbaaa]">We</span> Serve
+	</h2>
+	{
+		cards.map((card) => (
+			<div class="mb-8 px-4 md:px-0">
+				<Card
+					title={card.title}
+					content={card.content}
+					icon={card.icon}
+					bg={card.bg}
+					color={card.color}
+				>
+					<div class="md:text-gray-600" set:html={card.content} />
+				</Card>
+			</div>
+		))
+	}
+</section>

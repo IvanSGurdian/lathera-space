@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets'
+
+const { title, color, icon, bg } = Astro.props
+---
+
+<style>
+	.card {
+		background-size: cover;
+		background-position: left;
+		height: 100%;
+	}
+</style>
+
+<div>
+	<div
+		style={`background-image: url(${bg})`}
+		class="card bg-white rounded-4xl p-6 flex justify-end"
+	>
+		<div class="md:max-w-[40%] md:h-[350px] py-8">
+			<Image src={icon} alt={title} class="w-12 h-12 mb-4" />
+			<h3 class:list={['text-xl font-semibold mb-4', color]}>{title}</h3>
+			<div class="content">
+				<slot />
+			</div>
+		</div>
+	</div>
+</div>

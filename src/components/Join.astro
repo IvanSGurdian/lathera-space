@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets'
+import thinkIcon from '../assets/icons/Lathera Icons-07.svg'
+---
+
+<style>
+	section {
+		background-image: url('../assets/images/Subheadline.png');
+		background-size: cover;
+		background-position: center;
+		height: 60vh;
+	}
+</style>
+
+<section>
+	<div class="container xl:max-w-3xl lg:max-w-lg h-full">
+		<div class="bg-[#8b9886cc] text-white text-xl p-12 h-full">
+			<div class="max-w-60 mx-auto text-center md:text-left">
+				<div class="flex justify-center mb-8">
+					<Image src={thinkIcon} alt="Join" />
+				</div>
+
+				<p class="mb-8">
+					Calm, fully furnished suites in the heart of the city.
+				</p>
+
+				<p class="mb-8">
+					Zero leases, siomple online booking, and a built-in directory that
+					connects you with new clients
+				</p>
+
+				<div>
+					<a href="" class="bg-white text-[#8b9886] p-3 inline-block"
+						>Join the Launch List</a
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

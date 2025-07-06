@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets'
+
+import logo from '../assets/images/logo/LaTheraLogo.svg'
+import footer from '../assets/images/Footer img.png'
+import icon from '../assets/icons/Lathera Icons-05.svg'
+
+const navItems = [
+	{
+		label: 'Home for professionals',
+		href: '/',
+	},
+	{
+		label: 'Find a therapist',
+		href: '/find-a-therapist',
+	},
+	{
+		label: 'About',
+		href: '/about',
+	},
+	{
+		label: 'Blog',
+		href: '/blog',
+	},
+	{
+		label: 'Contact',
+		href: '/contact',
+	},
+]
+---
+
+<footer class="pb-10">
+	<div class="border-b-2 border-[#aeb395]">
+		<div class="container flex max-w-6xl mx-auto">
+			<!-- Logo -->
+			<div class="w-1/2">
+				<Image src={logo} alt="LaThera Space" width={150} />
+			</div>
+			<!-- IMage -->
+			<div class="w-1/2 md:relative">
+				<Image
+					src={footer}
+					alt="Footer Image"
+					width={450}
+					class="md:absolute -top-52"
+				/>
+			</div>
+		</div>
+		<div
+			class="container
+                    flex
+					flex-col
+					md:flex-row
+                    items-center
+                    max-w-6xl
+                    mx-auto"
+		>
+			<!-- Logo -->
+			<div class="md:w-1/2">
+				<p
+					class="px-4 text-center mb-8 md:px-0 md:text-left md:mb-0 md:max-w-[80%]"
+				>
+					LaThera Space provides flexible, contract-free therapy suites and a
+					curated therapist directory that bridges professionals and the public
+				</p>
+			</div>
+			<!-- IMage -->
+			<div class="md:w-1/2 md:border-l-3 border-[#ccbaaa] flex pl-8">
+				<Image src={icon} alt="logo" width={60} />
+
+				<div class="flex flex-col gap-1">
+					<span>our mission:</span>
+					<span class="text-[#8b9886] text-2xl font-light"
+						>foster growth, connection</span
+					>
+					<span class="text-[#ccbaaa] text-xl"
+						>and well-being-one session at a time</span
+					>
+				</div>
+			</div>
+		</div>
+
+		<div class="container max-w-6xl mx-auto text-center py-4 mt-8">
+			<ul class="text-[#8b9886]">
+				{
+					navItems.map((item) => {
+						return (
+							<li class="md:inline-block mx-8 mb-3 md:mb-0">
+								<a href={item.href}>{item.label}</a>
+							</li>
+						)
+					})
+				}
+			</ul>
+		</div>
+	</div>
+</footer>

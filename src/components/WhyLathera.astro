@@ -1,0 +1,85 @@
+---
+import { Image, Picture } from 'astro:assets'
+import icon1 from '../assets/icons/Lathera Icons-02.svg'
+import icon2 from '../assets/icons/Lathera Icons-01.svg'
+import icon3 from '../assets/icons/Lathera Icons-03.svg'
+import icon4 from '../assets/icons/Lathera Icons-04.svg'
+
+const listItems = [
+	{
+		icon: icon1,
+		title: 'No Contracts, No Hassle',
+		description:
+			'Reserve by the hour, half day or full day - only pay for the time you need.',
+	},
+	{
+		icon: icon2,
+		title: 'Designed for Well-Being',
+		description:
+			'Natural light, sound-treated walls and tasteful décor create a soothing environment for both you and your clients.',
+	},
+	{
+		icon: icon3,
+		title: 'Built-in Marketing',
+		description:
+			'Reserve by the hour, half day or full day - only pay for the time you need.',
+	},
+	{
+		icon: icon4,
+		title: 'All-Inclusive Amenities',
+		description:
+			'High-speed Wi-Fi, printing, coffee & tea bar, front-desk support and confidential waiting area included.',
+	},
+]
+---
+
+<style>
+	// Create a mediaquery for mobile devices
+	
+	section {
+		background: url('../assets/images/WhyLathera.png') no-repeat center right;
+		background-size: 40%;
+	}
+
+	@media (max-width: 768px) {
+		section {
+			background: none;
+			background-size: cover;
+		}
+	}
+</style>
+
+<section class="mt-8">
+	<div class="container max-w-md lg:max-w-4xl xl:max-w-6xl mx-auto relative">
+		<div class="flex">
+			<div class="pt-16">
+				<h2 class="text-4xl mb-14 text-center">
+					Why <span class="text-[#8b9886]">LaThera</span> Space
+				</h2>
+
+				<ul class="max-w-md px-8 md:px-0">
+					{
+						listItems.map((item, index) => (
+							<li class="flex flex-col md:flex-row justify-center items-center mb-8">
+								<div class="mr-4 min-w-[50px]">
+									<Image
+										src={item.icon}
+										alt={item.title}
+										width={50}
+										height={50}
+									/>
+								</div>
+								<div>
+									<h4 class="text-2xl mb-2 text-[#8b9886]">
+										{index + 1}. {item.title}
+									</h4>
+									<p>{item.description}</p>
+								</div>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
