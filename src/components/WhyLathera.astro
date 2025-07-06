@@ -34,22 +34,20 @@ const listItems = [
 ---
 
 <style>
-	// Create a mediaquery for mobile devices
-	
-	section {
+	section.why-lathera {
 		background: url('../assets/images/WhyLathera.png') no-repeat center right;
 		background-size: 40%;
 	}
 
-	@media (max-width: 768px) {
-		section {
+	@media screen and (max-width: 768px) {
+		section.why-lathera {
 			background: none;
 			background-size: cover;
 		}
 	}
 </style>
 
-<section class="mt-8">
+<section class="mt-8 why-lathera">
 	<div class="container max-w-md lg:max-w-4xl xl:max-w-6xl mx-auto relative">
 		<div class="flex">
 			<div class="pt-16">

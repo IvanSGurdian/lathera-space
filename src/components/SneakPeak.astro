@@ -38,6 +38,13 @@ import image5 from '../assets/gallery/5.png'
 			}
 		}
 	}
+
+	@media screen and (max-width: 768px) {
+		.gallery-grid {
+			display: flex;
+			flex-direction: column;
+		}
+	}
 </style>
 
 <section class="container mx-auto max-w-6xl mb-64 px-4 md:px-0">
@@ -49,7 +56,7 @@ import image5 from '../assets/gallery/5.png'
 		ready for yout next breakthrough session
 	</p>
 
-	<div class="md:grid mt-14">
+	<div class="gallery-grid mt-14">
 		<div class="grid-item">
 			<Image src={image3} class="w-full h-full" alt="" />
 		</div>
