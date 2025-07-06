@@ -68,7 +68,9 @@ const navItems = [
 
 		if (menuButton) {
 			menuButton.addEventListener('click', () => {
-				mobileMenu.classList.toggle('hidden')
+				if (mobileMenu) {
+					mobileMenu.classList.toggle('hidden')
+				}
 			})
 		}
 	})
